@@ -6,7 +6,21 @@
     display: grid;
 }
 
+.settings {
+    display: flex;
+    flex-direction: column;
+    width: 200px;
+    align-items: center;
+}
+#gridSizeRangeInput,
+#squareColorInput {
+    width: 200px;
+}
 .square {
     box-sizing: border-box;
-    border: 0.5px solid #e9ecef;
+    border: 0.5px dotted rgba(0, 0, 0, 0.1);
+}
+
+.black {
+    background: black;
 }
