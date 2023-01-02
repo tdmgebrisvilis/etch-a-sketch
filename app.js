@@ -7,13 +7,13 @@ const squareColorInput = document.querySelector('#squareColorInput')
 const eraser = document.querySelector("#eraser");
 const clearButton = document.querySelector("#clearButton")
 let color = document.querySelector('#squareColorInput').value
-let colorBeforeErasing = document.querySelector('#squareColorInput').value
+let colorBeforeErasing = document.querySelector('#squareColorInput').value // this is needed to make erasing work properly
 let squares = grid.childNodes
 
 makeNewGrid(); // make initial grid
 
 // Settings:
-gridSizeRangeInput.addEventListener('input', makeNewGrid, ); // change grid size
+gridSizeRangeInput.addEventListener('input', makeNewGrid, );
 squareColorInput.addEventListener('input', () => {
     color = squareColorInput.value
     colorBeforeErasing = color;
@@ -33,9 +33,9 @@ function makeNewGrid(){
         grid.appendChild(square);
         grid.setAttribute('style', `grid-template-columns: repeat(${squareSize}, ${gridWidth / squareSize}px);`);
     }
-    gridSizeIndex.innerText = `${gridSizeRangeInput.value}x${gridSizeRangeInput.value}`; // display current grid size
+    gridSizeIndex.innerText = `${gridSizeRangeInput.value}x${gridSizeRangeInput.value}`; 
     squares = grid.childNodes
-    squares.forEach(square => square.addEventListener('mousedown', draw)) // outside this function this wont work properly 
+    squares.forEach(square => square.addEventListener('mousedown', draw)) 
 }
 
 function draw(e){
