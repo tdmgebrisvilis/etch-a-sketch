@@ -20,6 +20,7 @@ squareColorInput.addEventListener('input', () => {
 }) 
 eraser.addEventListener('click', changeToEraserColor)
 squareColorInput.addEventListener('click', () => color = colorBeforeErasing)
+clearButton.addEventListener('click', () => squares.forEach(square => square.style.background = '#ffedd8'))
 
 
 function makeNewGrid(){
