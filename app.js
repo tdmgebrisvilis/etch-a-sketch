@@ -4,14 +4,23 @@ const gridWidth = grid.clientWidth;
 const gridSizeRangeInput = document.querySelector('#gridSizeRangeInput');
 const gridSizeIndex = document.querySelector('.gridSizeIndex');
 const squareColorInput = document.querySelector('#squareColorInput')
+const eraser = document.querySelector("#eraser");
+const clearButton = document.querySelector("#clearButton")
 let color = document.querySelector('#squareColorInput').value
+let colorBeforeErasing = document.querySelector('#squareColorInput').value
 let squares = grid.childNodes
 
 makeNewGrid(); // make initial grid
 
 // Settings:
 gridSizeRangeInput.addEventListener('input', makeNewGrid, ); // change grid size
-squareColorInput.addEventListener('input', () => color = squareColorInput.value) // change color
+squareColorInput.addEventListener('input', () => {
+    color = squareColorInput.value
+    colorBeforeErasing = color;
+}) 
+eraser.addEventListener('click', changeToEraserColor)
+squareColorInput.addEventListener('click', () => color = colorBeforeErasing)
+
 
 function makeNewGrid(){
     grid.replaceChildren(); // remove previous squares
@@ -38,4 +47,8 @@ function draw(e){
 
 function changeSquareColor (e) {
     e.target.style.background = color
+}
+
+function changeToEraserColor () {
+    color = '#ffedd8'
 }

@@ -1,38 +1,84 @@
+/* Flexbox */
+body,
+.settings,
+.settings > div {
+    display: flex;
+}
+
 body {
     font-family: JetBrains Mono;
+    flex-direction: column;
+    align-items: center;
+    background: #403d39;
 }
+
 #grid {
-    margin: 0 auto;
     width: 700px;
     height: 700px;
     border: 1px solid black;
     display: grid;
+    background: #ffedd8;
 }
 
 .settings {
-    display: flex;
+    gap: 100px;
+    margin-bottom: 10px;
+}
+.settings > div {
     flex-direction: column;
-    width: 200px;
-    align-items: center;
 }
 #gridSizeRangeInput,
-#squareColorInput {
+#squareColorInput,
+#eraser {
     width: 200px;
+    height: 30px;
+    margin: 0;
+    padding: 0;
 }
+
+#eraser {
+    width: 70px;
+    box-sizing: border-box;
+    background: #ffedd8;
+    border-radius: 5px;
+}
+#clearButton {
+    width: 700px;
+    height: 50px;
+    margin-top: 10px;
+    background: inherit;
+    border-color: #ffedd8;
+    font-family: JetBrains Mono;
+    font-size: 30px;
+    transition: all .07s ease;
+}
+#clearButton:hover {
+    box-shadow: 0 0 5px #ffc600;
+  }
+  label {
+    text-align: center;
+  }
 .square {
     box-sizing: border-box;
     border: 0.5px dotted rgba(0, 0, 0, 0.1);
 }
 
-.black {
-    background: black;
+h1, 
+label,
+#clearButton {
+    color: #ffc300;
 }
 
+
 .nonDrag {
-    user-drag: none;
+    /* user-drag: none; */
     -webkit-user-drag: none;
     user-select: none;
     -moz-user-select: none;
     -webkit-user-select: none;
     -ms-user-select: none;
+}
+
+input[type="color"]::-webkit-color-swatch-wrapper {
+    padding: 0;
 }
