@@ -21,7 +21,7 @@ squareColorInput.addEventListener('input', () => {
 eraser.addEventListener('click', changeToEraserColor)
 squareColorInput.addEventListener('click', () => color = colorBeforeErasing)
 clearButton.addEventListener('click', () => squares.forEach(square => square.style.background = '#ffedd8'))
-
+grid.addEventListener('contextmenu', (e) => e.preventDefault());
 
 function makeNewGrid(){
     grid.replaceChildren(); // remove previous squares
@@ -35,6 +35,7 @@ function makeNewGrid(){
     }
     gridSizeIndex.innerText = `${gridSizeRangeInput.value}x${gridSizeRangeInput.value}`; 
     squares = grid.childNodes
+    // event listener to draw:
     squares.forEach(square => square.addEventListener('mousedown', draw)) 
 }
 

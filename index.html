@@ -8,24 +8,34 @@
     <link rel="stylesheet" href="app.css">
 </head>
 <body>
-    <h1>Etch-A-Sketch</h1>
-    <div class="settings">
-        <div>
-            <label for="gridSizeRangeInput">Grid size: <span class="gridSizeIndex"></span></label>
-            <input type="range" name="gridSizeRangeInput" id="gridSizeRangeInput" min="10" max="30" value="20">
+    <!-- <h1>Etch-A-Sketch</h1> -->
+    <img src="imgs/etch-a-sketch-simulator.png" alt="">
+    <div id="main-section">
+        <div class="settings left">
+            <div id="gridInputContainer">
+                <label for="gridSizeRangeInput">Grid size:
+                    <br>
+                    <span class="gridSizeIndex"></span></label>
+                <input type="range" name="gridSizeRangeInput" id="gridSizeRangeInput" min="10" max="30" value="20">
+            </div>
+            <button id="clearButton">Clear<br>grid</button>
+            <div class="empty"></div>
+        </div>
+        <div id="grid"></div>
+        <div class="settings right">
+            <div>
+                <label for="squareColorInput">Color:</label>
+                <input type="color" name="squareColorInput" id="squareColorInput">
+            </div>
+            <div>
+                <label for="eraser">Eraser:</label>
+                <button id="eraser"></button>
+            </div>
+            <div class="empty"></div>
+
             
         </div>
-        <div>
-            <label for="squareColorInput">Color:</label>
-            <input type="color" name="squareColorInput" id="squareColorInput">
-        </div>
-        <div>
-            <label for="eraser">Eraser:</label>
-            <button id="eraser"></button>
-        </div>
     </div>
-    <div id="grid"></div>
-    <button id="clearButton">Clear grid</button>
     <script src="./app.js"></script>
 </body>
 </html>
